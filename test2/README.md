@@ -13,11 +13,11 @@ SQL> GRANT peng_hai_feng_res_view TO peng_hai_feng;
 Grant succeeded.
 SQL> exit
 ```
-语句“ALTER USER peng_hai_feng QUOTA 50M ON users;”是指授权peng_hai_feng用户访问users表空间，空间限额是50M。
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/01.png)
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/02.png)
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/03.png)
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/04.png)
+语句“ALTER USER peng_hai_feng QUOTA 50M ON users;”是指授权peng_hai_feng用户访问users表空间，空间限额是50M。
 
 第2步：新用户peng_hai_feng连接到pdborcl，创建表mytable和视图myview，插入数据，最后将myview的SELECT对象权限授予hr用户。
 ```
