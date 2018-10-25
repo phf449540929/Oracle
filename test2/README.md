@@ -1,7 +1,7 @@
-第1步：以system登录到pdborcl，创建角色con_res_view和用户new_user，并授权和分配空间。
+第1步：以system登录到pdborcl，创建角色peng_hai_feng_res_view和用户peng_hai_feng，并授权和分配空间。
 ```
 $ sqlplus system/123@pdborcl
-SQL> CREATE ROLE con_res_view;
+SQL> CREATE ROLE peng_hai_feng_res_view;
 Role created.
 SQL> GRANT connect,resource,CREATE VIEW TO peng_hai_feng_res_view;
 Grant succeeded.
@@ -45,7 +45,7 @@ SQL>exit
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/06.png)
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/07.png)
 
-第3步：用户hr连接到pdborcl，查询new_user授予它的视图myview
+第3步：用户hr连接到pdborcl，查询peng_hai_feng授予它的视图myview
 ```
 $ sqlplus hr/123@pdborcl
 SQL> SELECT * FROM peng_hai_feng.myview;
@@ -57,15 +57,16 @@ SQL> exit
 ```
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/10.png)
 
-测试一下同学用户之间的表的共享，只读共享和读写共享都测试一下。
+第4步：测试一下同学用户之间的表的共享，只读共享和读写共享都测试一下。
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/11.png)
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/12.png)
 
-数据库和表空间占用分析
+第5步：数据库和表空间占用分析
+<br>
 当全班同学的实验都做完之后，数据库pdborcl中包含了每个同学的角色和用户。 所有同学的用户都使用表空间users存储表的数据。 表空间中存储了很多相同名称的表mytable和视图myview，但分别属性于不同的用户，不会引起混淆。 随着用户往表中插入数据，表空间的磁盘使用量会增加。
-
-
+<br>
 查看数据库的使用情况
+<br>
 以下样例查看表空间的数据库文件，以及每个文件的磁盘占用情况。
 ```
 $ sqlplus system/123@pdborcl
@@ -85,4 +86,5 @@ SQL>SELECT a.tablespace_name "表空间名",Total/1024/1024 "大小MB",
 ![](https://github.com/phf449540929/Oracle/blob/master/test2/09.png)
  
 autoextensible是显示表空间中的数据文件是否自动增加。
+<br>
 MAX_MB是指数据文件的最大容量。
