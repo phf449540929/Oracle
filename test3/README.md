@@ -86,7 +86,7 @@ TABLESPACE USERS02
 );
 ```
 
-运行截图如下
+运行截图如下<br>
 ![](https://github.com/phf449540929/Oracle/blob/master/test3/02.png)
 
 之后，我使用了Oracle的循环语句插入了10000条模版数据。
