@@ -114,4 +114,4 @@ end; 
 
 随后，<br>
 我通过老师给的样例代码查看表空间的数据库文件，以及每个文件的磁盘占用情况。
-![](https://github.com/phf449540929/Oracle/blob/master/test3/02.png)
+![](https://github.com/phf449540929/Oracle/blob/master/test3/03.png)
