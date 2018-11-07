@@ -1,5 +1,5 @@
 首先，<br>
-我使用system用户给自己的账号分配了USERS,USERS02,USERS0三个分区的使用权限。
+我使用system用户给自己的账号分配了USERS,USERS02,USERS03三个分区的使用权限。
 ![](https://github.com/phf449540929/Oracle/blob/master/test3/01.png)
 
 紧接着，<br>
@@ -27,8 +27,8 @@ PARTITION BY RANGE (order_date)
  PARTITION PARTITION_BEFORE_2016 VALUES LESS THAN (
  TO_DATE(' 2016-01-01 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 
  'NLS_CALENDAR=GREGORIAN')) 
- NOLOGGING 
- TABLESPACE USERS 
+ NOLOGGING
+ TABLESPACE USERS02
  PCTFREE 10 
  INITRANS 1 
  STORAGE 
@@ -39,12 +39,23 @@ PARTITION BY RANGE (order_date)
  MAXEXTENTS UNLIMITED 
  BUFFER_POOL DEFAULT 
 ) 
-NOCOMPRESS NO INMEMORY  
-, PARTITION PARTITION_BEFORE_2017 VALUES LESS THAN (
+NOCOMPRESS NO INMEMORY, 
+PARTITION PARTITION_BEFORE_2017 VALUES LESS THAN (
 TO_DATE(' 2017-01-01 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 
 'NLS_CALENDAR=GREGORIAN')) 
 NOLOGGING 
-TABLESPACE USERS02 
+TABLESPACE USERS03
+ PCTFREE 10 
+ INITRANS 1 
+ STORAGE 
+( 
+ INITIAL 8388608 
+ NEXT 1048576 
+ MINEXTENTS 1 
+ MAXEXTENTS UNLIMITED 
+ BUFFER_POOL DEFAULT 
+) 
+NOCOMPRESS NO INMEMORY
 );
 ```
 
@@ -69,6 +80,7 @@ PARTITION BY REFERENCE (order_details_fk1)
 (
 PARTITION PARTITION_BEFORE_2016 
 NOLOGGING 
+
 TABLESPACE USERS
 PCTFREE 10 
 INITRANS 1 
@@ -80,6 +92,7 @@ STORAGE
  MAXEXTENTS UNLIMITED 
  BUFFER_POOL DEFAULT 
 ) 
+
 NOCOMPRESS NO INMEMORY, 
 PARTITION PARTITION_BEFORE_2017 
 NOLOGGING 
@@ -100,9 +113,9 @@ begin
 
   for i in 1..maxnumber loop
   
-    insert into orders(order_id, customer_name, customer_tel, order_date, employee_id, discount, trade_receivable)
-    values(i, '1', '1',
-    TO_DATE(' 2016-01-01 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', NLS_CALENDAR=GREGORIAN'),
+    insert into orders(order_id, customer_name, customer_tel, order_date, employee_id, discount, trade_receivable) values
+    (i, '1', '1',
+    TO_DATE(' 2016-01-01 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'),
     '1', '1', '1');
     
     insert into order_details (id, order_id, product_id, product_num, product_price, order_details_fk1)
