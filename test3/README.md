@@ -57,7 +57,7 @@ id NUMBER(10, 0) NOT NULL
 , product_num NUMBER(8, 2) NOT NULL 
 , product_price NUMBER(8, 2) NOT NULL 
 , CONSTRAINT order_details_fk1 FOREIGN KEY  (order_id)
-REFERENCES orders  (  order_id   )
+REFERENCES orders  (order_id)
 ENABLE 
 ) 
 TABLESPACE USERS 
