@@ -16,6 +16,7 @@ SQL> CREATE TABLE orders
  , employee_id NUMBER(6, 0) NOT NULL 
  , discount NUMBER(8, 2) DEFAULT 0 
  , trade_receivable NUMBER(8, 2) DEFAULT 0 
+ , CONSTRAINT orders_pk PRIMARY KEY(order_id)
 ) 
 TABLESPACE USERS 
 PCTFREE 10 INITRANS 1 
