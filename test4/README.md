@@ -22,10 +22,10 @@ GRANT CREATE VIEW TO peng_hai_feng WITH ADMIN OPTION;
 ```
 
 四、建DEPARTMENTS表
-![](https://github.com/phf449540929/Oracle/blob/master/test4/QQ截图20181122161555.png)
+![](https://github.com/phf449540929/Oracle/blob/master/test4/QQ截图20181122161554.png)
 
 五、建EMPLOYEES表
-![](https://github.com/phf449540929/Oracle/blob/master/test4/QQ截图20181122161609.png)
+![](https://github.com/phf449540929/Oracle/blob/master/test4/QQ截图20181122161555.png)
 
 六、添加索引
 
