@@ -140,7 +140,7 @@ NOCOMPRESS NO INMEMORY
 ```
 
 运行截图如下<br>
-![](https://github.com/phf449540929/Oracle/blob/master/test3/02.png)
+![](https://github.com/phf449540929/Oracle/blob/master/test3/03.png)
 
 之后，我使用了Oracle的循环语句插入了10000条模版数据。
 ```
@@ -168,4 +168,4 @@ end; 
 
 随后，<br>
 我通过老师给的样例代码查看表空间的数据库文件，以及每个文件的磁盘占用情况。
-![](https://github.com/phf449540929/Oracle/blob/master/test3/03.png)
+![](https://github.com/phf449540929/Oracle/blob/master/test3/02.png)
