@@ -1,3 +1,10 @@
+```
+姓名：彭海峰
+角色名：peng_hai_feng_res_view
+用户名：peng_hai_feng
+密码：123
+```
+
 第1步：以system登录到pdborcl，创建角色peng_hai_feng_res_view和用户peng_hai_feng，并授权和分配空间。
 ```
 $ sqlplus system/123@pdborcl
