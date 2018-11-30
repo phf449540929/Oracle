@@ -1,3 +1,10 @@
+```
+姓名：彭海峰
+角色名：peng_hai_feng_res_view
+用户名：peng_hai_feng
+密码：123
+```
+
 首先，<br>
 我使用system用户给自己的账号分配了USERS,USERS02,USERS03三个分区的使用权限。
 ![](https://github.com/phf449540929/Oracle/blob/master/test3/01.png)
