@@ -1,3 +1,10 @@
+```
+姓名：彭海峰
+角色名：peng_hai_feng_res_view
+用户名：peng_hai_feng
+密码：123
+```
+
 一、为用户分配表空间
 ![](https://github.com/phf449540929/Oracle/blob/master/test4/01.png)
 
